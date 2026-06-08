@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ITP FSP/ITP FSP.vcxproj" Id="5afa3a94-a0f7-4fa9-a269-dfbfe4d725d4" />
+</Solution>

@@ -1,0 +1,11 @@
+Computer
+Admins: Hassan,123 Sheraz,1234
+Hiring: jinx,123 aqib,456    shahrukh,789 nazia,1234
+
+Managemen
+admin: ayesha,12345
+hiring: hania,5678 rida,12345
+
+Biology
+admin Yasir,123098  muqadas,098
+hiring: shebaz,6789
