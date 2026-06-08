@@ -24,7 +24,7 @@
     <ProjectGuid>{5afa3a94-a0f7-4fa9-a269-dfbfe4d725d4}</ProjectGuid>
     <RootNamespace>ITPFSP</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Company</ProjectName>
+    <ProjectName>Management</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
