@@ -11,7 +11,6 @@ void Administer::assignTask(Employee* emp)
 	int dueDate;
 	
 	cout << "\n\tEnter task: ";
-	cin.ignore();
 	getline(cin, task);
 	cout << "\n\tEnter instruction: ";
 	getline(cin, instruction);

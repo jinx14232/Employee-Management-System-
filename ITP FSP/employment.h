@@ -48,7 +48,7 @@ void empMenu(Company& company, int empIdx) {
 			break;
 		case 2: 
 		{
-			
+			user->showWorkLoad();
 		}
 		break;
 		case 3:

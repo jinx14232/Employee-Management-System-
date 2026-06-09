@@ -148,27 +148,18 @@ void adminMenu(Company& company, int adminIdx)
 					break;
 				}
 				//we got the employee and he is hired by the user, now assign task
+				cout << "\n\tAssigning task to " << employee->getName() << "...\n";
 				user->assignTask(employee);
+				cout << "\n\tTask assigned successfully!!";
+				hold("Press any key to continue: ");
+				break;
 			}
-			//int* idxes = findEmp(input, "id");
-			//if (idxes[1] == -1) {
-			//	validateMail(input);
-			//	idxes = findEmp(input, "mail");
-			//	if (idxes[1] == -1) {
-			//		cout << "\n\tCannot find any eymployer with provided credentials!!";
-			//		hold();
-			//		break;
-			//	}
-			//}
-			//if (administers[*idxes].id != user->id) {
-			//	cout << "\n\tSorry you have made no hiring of this ID";
-			//	hold();
-			//	break;
-			//}
-			//assign_task(&user->eymployees[idxes[1]]);
-			//adm_reg(user, "task", &user->eymployees[idxes[1]]);
-			//delete[] idxes;
-			//idxes = nullptr;
+			else {
+				cout << "\n\tSorry you have made no hiring of this employee!!";
+				hold("Press any key to continue: ");
+				break;
+			}
+			hold("Press any key to continue: ");
 			break;
 		}
 		case 4:

@@ -44,6 +44,8 @@ public:
 	void addTask(WorkLoad wl) {
 		workLoad.push_back(wl);
 	}
+	void showWorkLoad();
+
 	void display() override;
 };
 
