@@ -51,6 +51,7 @@ public:
 		return &employees[empIdx];
 	};
 	Person* getUserByMail(string mail);
+	Person* getUserByID(string id);
 
 };
 

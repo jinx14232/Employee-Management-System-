@@ -125,11 +125,31 @@ void adminMenu(Company& company, int adminIdx)
 				hold("Press any key to continue: ");
 				break;
 			}
-			//string input;
-			//cout << "\n\tYou can only assign task to those eymployee whom you have hired!\n";
-			//cout << "\n\tEnter ID or MAIL of eymployee: ";
-			//cin.ignore();
-			//getline(cin, input);
+			string input;
+			cout << "\n\tEnter ID or MAIL of eymployee: ";
+			cin.ignore();
+			getline(cin, input);
+			Person* emp = company.getUserByID(input);
+			if (!emp) { //try to find by mail
+				emp = company.getUserByMail(input);
+				if (!emp) {
+					cout << "\n\tCannot find any eymployer with provided credentials!!";
+					hold("Press any key to continue: ");
+					break;
+				}
+
+			}
+			//see if we get an employee, not an emplyer
+			if (Employee* employee = dynamic_cast<Employee*>(emp)) {
+				//we got an employee, now check if he is hired by the user
+				if (employee->getAdminId() != user->getId()) {
+					cout << "\n\tSorry you have made no hiring of this employee!!";
+					hold("Press any key to continue: ");
+					break;
+				}
+				//we got the employee and he is hired by the user, now assign task
+				user->assignTask(employee);
+			}
 			//int* idxes = findEmp(input, "id");
 			//if (idxes[1] == -1) {
 			//	validateMail(input);

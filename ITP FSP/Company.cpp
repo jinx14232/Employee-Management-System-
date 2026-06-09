@@ -151,6 +151,21 @@ Person* Company::getUserByMail(string mail)
 	}
 	return nullptr;
 }
+Person* Company::getUserByID(string id)
+{
+	for (int i = 0; i < allAdmins; i++) {
+		if (administers[i].getId() == id) {
+			return &administers[i];
+		}
+	}
+	for (int i = 0; i < allEmps; i++) {
+		if (employees[i].getId() == id) {
+			return &employees[i];
+		}
+	}
+
+	return nullptr;
+}
 int Company::findAdmin(string pass)
 {
 	for (int i = 0; i < allAdmins; i++) {
@@ -169,11 +184,7 @@ int Company::findEmp(string pass)
 	}
 	return -1;
 }
-//bool Company::sendMail(Mail composedMail)
-//{
-//
-//	return false;
-//}
+
 void Company::hireEmp(Administer* admin, DepartmentInfo* department)
 {
 	string name, mail, password;

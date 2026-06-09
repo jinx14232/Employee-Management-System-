@@ -1,7 +1,8 @@
 #pragma once
 #include "Person.h"
 #include <iostream>
-
+#include "WorkLoad.h"
+#include <vector>
 
 
 class Employee :
@@ -12,6 +13,8 @@ private:
 	string adminId;
 	string adminMail;
 	string admin;
+	vector<WorkLoad> workLoad;
+
 public:
 	Employee() {};
 	Employee(string n, string d, string i, string m, string p, double s, string aI, string aM, string a) {
@@ -38,7 +41,9 @@ public:
 	string getAdminMail() {
 		return adminMail;
 	}	
-
+	void addTask(WorkLoad wl) {
+		workLoad.push_back(wl);
+	}
 	void display() override;
 };
 

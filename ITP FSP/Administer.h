@@ -31,6 +31,7 @@ public:
 		return hiringMade;
 	}
 	Employee* getEmployee(int idx);
+	void assignTask(Employee* emp);
 	void display() override;
 
 };

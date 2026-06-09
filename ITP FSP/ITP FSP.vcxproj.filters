@@ -59,5 +59,8 @@
     <ClInclude Include="Mail.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WorkLoad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

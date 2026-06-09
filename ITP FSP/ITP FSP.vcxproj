@@ -144,6 +144,7 @@
     <ClInclude Include="Mail.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="utilities.h" />
+    <ClInclude Include="WorkLoad.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
