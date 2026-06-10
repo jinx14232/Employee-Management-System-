@@ -49,6 +49,8 @@ void Company::registerAdmin(int dptNo)
 	allAdmins++;
 	departments[dptNo].increaseAdmins();
 	departments[dptNo].incrementAdminId();
+
+	sendMail(nullptr, &administers[allAdmins - 1], Mail("HR Department", mail, "Welcome to " + department + " Department", "Congratulations! You have been registered as administer of " + department + " department. We are excited to have you on board!"+ "\n\n\tYour Credentials are :\n\n\tID: " + id + "\n\tMAIL: " + mail + "\n\tPASSWORD: " + password + "\n\tMAXHIRING: 3"));
 	
 }
 
@@ -115,26 +117,12 @@ void Company::insight() const
 	}
 
 }
-bool Company::sendMail(Person* sender, string receiver)
+void Company::sendMail(Person* sender, Person* receiver, Mail mail)
 {
-	Person* recipient = getUserByMail(receiver);
-	if(!recipient) {
-		return false;
+	receiver->receiveMail(mail); //for inbox
+	if(sender) {
+		sender->receiveMail(mail); //for sent items
 	}
-	string subject, body;
-	cout << "\n\tCompose Email: ";
-	cout << "\n\tSender: " << sender->getMail() << sender->getName();
-	cout << "\n\tReceiver: " << receiver;
-	cout << "\n\tSubject: ";
-	getline(cin, subject);
-	cout << "\n\tBody: ";
-	getline(cin, body);
-
-	Mail mail(sender->getMail(), receiver, subject, body);
-	recipient->receiveMail(mail);
-	sender->receiveMail(mail); //for sent items
-
-	return true;
 }
 
 Person* Company::getUserByMail(string mail)
@@ -166,6 +154,7 @@ Person* Company::getUserByID(string id)
 
 	return nullptr;
 }
+
 int Company::findAdmin(string pass)
 {
 	for (int i = 0; i < allAdmins; i++) {
@@ -214,6 +203,9 @@ void Company::hireEmp(Administer* admin, DepartmentInfo* department)
 	allEmps++;
 	department->increaseEmps();
 	department->incrementEmpId();
+
+	sendMail(admin, &employees[allEmps - 1], Mail(admin->getMail(), mail, "Congratulations!!", "\tYou have been hired successfully!!\n\n\tYour credentials are following:\n\n\tID: " + id + "\n\tPassword: " + password + "\n\tDepartment: " + dpt + "\n\tSalary: " + to_string(sal) + "\n\n\tBest of luck!!"));
+
 }
 
 

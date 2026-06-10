@@ -1,4 +1,5 @@
 #include"Employee.h"
+#include"utilities.h"
 
 void Employee::showWorkLoad()
 {
@@ -14,6 +15,7 @@ void Employee::showWorkLoad()
 			<< "\n\tInstruction: " << wl.getInstruction()
 			<< "\n\tDue Date: " << wl.getDueDate() << endl;
 	}
+	hold("Press any key to continue: ");
 }
 
 void Employee::display()
@@ -23,6 +25,7 @@ void Employee::display()
 	cout << "\n\tNAME: " << name;
 	cout << "\n\tMAIL: " << mail;
 	cout << "\n\tPASSWORD: " << password;
+	cout << "\n\tSALARY: " << salary;
 	cout << "\n\tADMIN ID: " << adminId;
 	cout << "\n\tEMPLOYER: " << admin;
 	cout << "\n\tADMIN MAIL: " << adminMail;

@@ -72,25 +72,27 @@ void empMenu(Company& company, int empIdx) {
 					cout << "\n\tEnter mail of receiver: ";
 					cin.ignore();
 					getline(cin, mail);
-					if (mail == user->getMail()) {
-						cout << "\n\tYou cannot send mail to yourself!!\n";
+					if (mail == user->getMail() || !validMail(mail)) {
+						cout << "\n\tYou cannot send mail to yourself or to an invalid address!!\n";
 						hold("Press any key to continue: ");
 						break;
 					}
-					bool sent = company.sendMail(user, mail);
-					if (sent) {
-						cout << "\n\tMail sent successfully!!\n";
+					Person* receiver = company.getUserByMail(mail);
+					if (receiver == nullptr) {
+						cout << "\n\tNo user found with this mail!!\n";
 						hold("Press any key to continue: ");
+						break;
 					}
-					else {
-						cout << "\n\tFailed to send mail!! Check the mail and try again.\n";
-						hold("Press any key to continue: ");
-					}
+					Mail mailToSend = composeMail(user->getMail(), mail);
+					company.sendMail(user, receiver, mailToSend);
+					cout << "\n\tMail sent successfully!!\n";
+					hold("Press any key to continue: ");
 
 				}
 				break;
 				case 2:
 					user->showMails();
+					hold("Press any key to continue: ");
 				break;
 				}
 

@@ -35,7 +35,7 @@ public:
 	bool passwordExists(string pass);
 	bool passwordExists(string pass, string emp);
 	void insight()const;
-	bool sendMail(Person* sender, string receiver);
+	void sendMail(Person* sender, Person* receiver, Mail mail);
 	int findAdmin(string pass);
 	int findEmp(string pass);
 

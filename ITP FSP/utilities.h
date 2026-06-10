@@ -20,6 +20,20 @@ static void hold(string msg) {
 	system("CLS");
 }
 
+inline Mail composeMail(string sender, string receiver)
+{
+	string subject, body;
+	cout << "\n\tCompose Email: ";
+	cout << "\n\tSender: " << sender;
+	cout << "\n\tReceiver: " << receiver;
+	cout << "\n\tSubject: ";
+	getline(cin, subject);
+	cout << "\n\tBody: ";
+	getline(cin, body);
+	Mail mail(sender, receiver, subject, body);
+	return mail;
+}
+
 static int getDptNo() {
 	string dpt;
 	cout << "\n\tEnter Department:  ";
