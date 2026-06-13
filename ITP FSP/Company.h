@@ -9,7 +9,6 @@
 #include"Employee.h"
 #include"DepartmentInfo.h"
 
-
 using namespace std;
 
 class Company
@@ -35,7 +34,6 @@ public:
 	bool passwordExists(string pass);
 	bool passwordExists(string pass, string emp);
 	void insight()const;
-	void sendMail(Person* sender, Person* receiver, Mail mail);
 	int findAdmin(string pass);
 	int findEmp(string pass);
 
@@ -52,6 +50,8 @@ public:
 	};
 	Person* getUserByMail(string mail);
 	Person* getUserByID(string id);
+	void sendMail(Person* sender, Person* receiver, Mail mail);
+
 
 };
 

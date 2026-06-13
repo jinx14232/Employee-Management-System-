@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include"utilities.h"
 
 void adminMenu(Company& company, int adminIdx); 
 
@@ -164,49 +165,50 @@ void adminMenu(Company& company, int adminIdx)
 		}
 		case 4:
 		{
-			int ch;
-			do
-			{
-				cout << "\n\t-----Gmail-----\n";
-				cout << "\t1. Compose\n";
-				cout << "\t2. Inbox\n";
-				cout << "\t3. Exit\n";
+			//int ch;
+			//do
+			//{
+			//	cout << "\n\t-----Gmail-----\n";
+			//	cout << "\t1. Compose\n";
+			//	cout << "\t2. Inbox\n";
+			//	cout << "\t3. Exit\n";
 
-				cin >> ch;
-				validateInput(ch, 3);
-				system("CLS");
-				switch (ch)
-				{
-				case 1:
-				{
-					string mail;
-					cout << "\n\tEnter mail of receiver: ";
-					cin.ignore();
-					getline(cin, mail);
-					if (mail == user->getMail() || !validMail(mail)) {
-						cout << "\n\tYou cannot send mail to yourself or to an invalid address!!\n";
-						hold("Press any key to continue: ");
-						break;
-					}
-					Person* receiver = company.getUserByMail(mail);
-					if (receiver == nullptr) {
-						cout << "\n\tNo user found with this mail!!\n";
-						hold("Press any key to continue: ");
-						break;
-					}
-					Mail mailToSend = composeMail(user->getMail(), mail);
-					company.sendMail(user, receiver, mailToSend);
-					cout << "\n\tMail sent successfully!!\n";
-					hold("Press any key to continue: ");
-				}
-				break;
-				case 2:
-					user->showMails();
-					hold("Press any key to continue: ");
-					break;
-				}
+			//	cin >> ch;
+			//	validateInput(ch, 3);
+			//	system("CLS");
+			//	switch (ch)
+			//	{
+			//	case 1:
+			//	{
+			//		string mail;
+			//		cout << "\n\tEnter mail of receiver: ";
+			//		cin.ignore();
+			//		getline(cin, mail);
+			//		if (mail == user->getMail() || !validMail(mail)) {
+			//			cout << "\n\tYou cannot send mail to yourself or to an invalid address!!\n";
+			//			hold("Press any key to continue: ");
+			//			break;
+			//		}
+			//		Person* receiver = company.getUserByMail(mail);
+			//		if (receiver == nullptr) {
+			//			cout << "\n\tNo user found with this mail!!\n";
+			//			hold("Press any key to continue: ");
+			//			break;
+			//		}
+			//		Mail mailToSend = composeMail(user->getMail(), mail);
+			//		company.sendMail(user, receiver, mailToSend);
+			//		cout << "\n\tMail sent successfully!!\n";
+			//		hold("Press any key to continue: ");
+			//	}
+			//	break;
+			//	case 2:
+			//		user->showMails();
+			//		hold("Press any key to continue: ");
+			//		break;
+			//	}
 
-			} while (ch != 3);
+			//} while (ch != 3);
+			user->mailMenu(company);
 
 		}break;
 		case 6: //request

@@ -3,8 +3,10 @@
 #include<string>
 #include"Mail.h"
 #include<vector>
+//#include"utilities.h"
 
 using namespace std;
+class Company;
 class Person
 {
 protected:
@@ -47,21 +49,20 @@ public:
 	vector<Mail> getAllInbox() {
 		return inbox;
 	}
-	void showMails() {
-		if (inbox.empty()) {
-			cout << "\n\tNo mails in inbox!!\n";
-			return;
-		}
-		cout << "\n\t------INBOX-----\n\n";
-		for (int i = 0; i < inbox.size(); i++) {
-			Mail mail = inbox[i];
-			cout << "\n\t\t---Mail No. " << i + 1<< "--\n";
-			cout << "\n\tSender: " << mail.getSender()
-				<< "\n\tReceiver: " << mail.getReceiver()
-				<< "\n\tSubject: " << mail.getSubject()
-				<< "\n\n\tBody: " << mail.getBody() << endl;
-		}
+	void showMail(int idx) {
+		
+		//cout << "\n\t------INBOX-----\n\n";
+		//for (int i = 0; i < inbox.size(); i++) {
+		//	Mail mail = inbox[i];
+		cout << "\n\tSender: " << inbox[idx].getSender()
+				<< "\n\tReceiver: " << inbox[idx].getReceiver()
+				<< "\n\tSubject: " << inbox[idx].getSubject()
+				<< "\n\n\tBody: " << inbox[idx].getBody() << endl;
 	}
+	Mail getMail(int idx) {
+		return inbox[idx];
+	}
+    void mailMenu(Company& company);
 	virtual void display() = 0;
 
 };

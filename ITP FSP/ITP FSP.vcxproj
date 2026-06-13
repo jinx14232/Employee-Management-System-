@@ -133,6 +133,8 @@
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="ITP project.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administer.h" />
